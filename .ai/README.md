@@ -23,7 +23,7 @@ delgado que apunta aquí (misma filosofía que [`AGENTS.md`](../AGENTS.md)).
   skills/          cuerpos canónicos de skills (los procedimientos reales)
     ways-of-working.md   (manual de trabajo — léelo primero)
     sdd-specify.md  sdd-plan.md  sdd-tasks.md  sdd-implement.md  sdd-verify.md
-    slide-authoring.md  brand-system.md  vue-component.md  export-build.md
+    slide-authoring.md  brand-system.md  flowchart-diagrams.md  vue-component.md  export-build.md
   templates/       plantillas de artefacto usadas por las skills SDD
     spec.template.md  plan.template.md  tasks.template.md
 specs/             artefactos generados, una carpeta por presentación (NNN-slug/)

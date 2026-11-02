@@ -179,7 +179,7 @@ Capacidades reutilizables en [`.ai/`](.ai/README.md) — lee el archivo relevant
 
 - `.ai/skills/` — el **manual de trabajo** (`ways-of-working`, léelo primero), el flujo SDD
   (`sdd-specify` → `plan` → `tasks` → `implement` → `verify`) y skills de buenas prácticas
-  (`slide-authoring`, `brand-system`, `vue-component`, `export-build`).
+  (`slide-authoring`, `brand-system`, `flowchart-diagrams`, `vue-component`, `export-build`).
 - `.ai/prompts/` — playbooks de tarea (`create-slide`, `create-section`, `create-component`,
   `customize-brand-theme`, `review-and-refactor`, generadores de blueprint, `create-llms`,
   y mantenimiento `optimize-documentation` / `update-instructions`).
