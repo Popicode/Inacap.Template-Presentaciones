@@ -1,0 +1,111 @@
+/* INACAP Nueva Sans — corporate primary typeface (served from /public/fonts) */
+@font-face {
+	font-family: 'INACAP Nueva Sans';
+	font-style: normal;
+	font-weight: 300;
+	font-display: swap;
+	src:
+		url('/fonts/INACAPNuevaSans-Light.woff2') format('woff2'),
+		url('/fonts/INACAPNuevaSans-Light.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'INACAP Nueva Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src:
+		url('/fonts/INACAPNuevaSans-Regular.woff2') format('woff2'),
+		url('/fonts/INACAPNuevaSans-Regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'INACAP Nueva Sans';
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src:
+		url('/fonts/INACAPNuevaSans-Medium.woff2') format('woff2'),
+		url('/fonts/INACAPNuevaSans-Medium.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'INACAP Nueva Sans';
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src:
+		url('/fonts/INACAPNuevaSans-SemiBold.woff2') format('woff2'),
+		url('/fonts/INACAPNuevaSans-SemiBold.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'INACAP Nueva Sans';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src:
+		url('/fonts/INACAPNuevaSans-Bold.woff2') format('woff2'),
+		url('/fonts/INACAPNuevaSans-Bold.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'INACAP Nueva Sans';
+	font-style: normal;
+	font-weight: 800;
+	font-display: swap;
+	src:
+		url('/fonts/INACAPNuevaSans-ExtraBold.woff2') format('woff2'),
+		url('/fonts/INACAPNuevaSans-ExtraBold.woff') format('woff');
+}
+
+/* INACAP Nueva Serif — corporate secondary typeface (editorial / quotes) */
+@font-face {
+	font-family: 'INACAP Nueva Serif';
+	font-style: normal;
+	font-weight: 300;
+	font-display: swap;
+	src:
+		url('/fonts/INACAPNuevaSerif-Light.woff2') format('woff2'),
+		url('/fonts/INACAPNuevaSerif-Light.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'INACAP Nueva Serif';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src:
+		url('/fonts/INACAPNuevaSerif-Regular.woff2') format('woff2'),
+		url('/fonts/INACAPNuevaSerif-Regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'INACAP Nueva Serif';
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src:
+		url('/fonts/INACAPNuevaSerif-Medium.woff2') format('woff2'),
+		url('/fonts/INACAPNuevaSerif-Medium.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'INACAP Nueva Serif';
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src:
+		url('/fonts/INACAPNuevaSerif-SemiBold.woff2') format('woff2'),
+		url('/fonts/INACAPNuevaSerif-SemiBold.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'INACAP Nueva Serif';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src:
+		url('/fonts/INACAPNuevaSerif-Bold.woff2') format('woff2'),
+		url('/fonts/INACAPNuevaSerif-Bold.woff') format('woff');
+}

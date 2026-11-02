@@ -1,0 +1,10 @@
+{
+	"recommendations": [
+		"vue.volar",
+		"antfu.slidev",
+		"antfu.unocss",
+		"dbaeumer.vscode-eslint",
+		"esbenp.prettier-vscode",
+		"yzhang.markdown-all-in-one"
+	]
+}

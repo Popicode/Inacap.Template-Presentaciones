@@ -1,0 +1,56 @@
+{
+	"$schema": "https://json.schemastore.org/package.json",
+	"version": "1.0.0",
+	"project": "Proyecto Integrador · TIHV43 · Evaluación 1",
+	"name": "inacap-rbac-msc-chile",
+	"title": "Modernización de Sistema RBAC — MSC Chile",
+	"description": "Propuesta Técnica de Transición y Plataforma Web de Control de Accesos — Mediterranean Shipping Company (MSC Chile) | INACAP",
+	"type": "module",
+	"scripts": {
+		"dev": "slidev src/slides.md --open",
+		"build": "slidev build src/slides.md --base ./ -o ../dist",
+		"export": "slidev export src/slides.md --output .reports/presentation.pdf",
+		"export:pptx": "slidev export src/slides.md --format pptx --output .reports/presentation.pptx",
+		"export:png": "slidev export src/slides.md --format png --output .reports/slides",
+		"preview": "slidev build src/slides.md -o ../dist && vite preview --outDir dist",
+		"check:overflow": "node scripts/check-overflow.mjs",
+		"lint": "eslint --fix --cache --cache-location node_modules/.cache/eslint/",
+		"format": "prettier --cache --write **/*.{ts,cts,mts,vue,css,json,md,yml,yaml}",
+		"typecheck": "vue-tsc --noEmit"
+	},
+	"dependencies": {
+		"@slidev/cli": "52.16.0",
+		"@slidev/theme-default": "0.25.0",
+		"@slidev/theme-seriph": "0.25.0",
+		"vue": "3.5.39"
+	},
+	"devDependencies": {
+		"@iconify-json/mdi": "1.2.3",
+		"@iconify-json/simple-icons": "1.2.88",
+		"@types/eslint": "9.6.1",
+		"@unocss/eslint-config": "66.7.4",
+		"@vue/eslint-config-prettier": "10.2.0",
+		"eslint": "10.6.0",
+		"eslint-config-prettier": "10.1.8",
+		"eslint-plugin-perfectionist": "5.9.1",
+		"eslint-plugin-prettier": "5.5.6",
+		"eslint-plugin-promise": "7.3.0",
+		"eslint-plugin-regexp": "3.1.1",
+		"eslint-plugin-sonarjs": "4.1.0",
+		"eslint-plugin-unicorn": "69.0.0",
+		"eslint-plugin-vue": "10.9.2",
+		"globals": "17.7.0",
+		"playwright-chromium": "1.64.1",
+		"playwright-core": "1.61.1",
+		"prettier": "3.9.4",
+		"typescript": "6.0.3",
+		"typescript-eslint": "8.62.1",
+		"unocss": "66.7.4",
+		"vue-eslint-parser": "10.4.1",
+		"vue-tsc": "3.3.6"
+	},
+	"engines": {
+		"node": ">=22",
+		"pnpm": ">=10"
+	}
+}

@@ -1,0 +1,41 @@
+# Plantilla de Presentaciones INACAP (Slidev)
+
+> Plantilla corporativa INACAP para crear presentaciones empresariales escalables y
+> reutilizables con Slidev (Vue 3 + Vite + UnoCSS), orientada a flujos asistidos por IA.
+> Markdown primero para el contenido; componentes Vue para lo interactivo; identidad INACAP
+> (colores, tipografías, logo) centralizada.
+
+## Documentación
+
+- [AGENTS.md](AGENTS.md): Instrucciones canónicas y neutrales a la herramienta para todos los asistentes de IA (stack, reglas, comandos, estructura, loop SDD) — fuente única de verdad.
+- [README](README.md): Documentación humana del proyecto, características y puesta en marcha.
+- [.ai/README.md](.ai/README.md): Capa de autoría asistida por IA — loop SDD adaptado a decks y tabla de alcance por herramienta.
+
+## Deep references
+
+- [Architecture guide](.github/instructions/architecture-guide.instructions.md): Estructura del proyecto, regla "todo bajo `src/`", flujo build/export.
+- [Coding standards](.github/instructions/coding-standards.instructions.md): Marca/tokens/fuentes, formato, naming, JSDoc, TypeScript, accesibilidad.
+- [Patterns](.github/instructions/patterns.instructions.md): Recetas para crear slide, layouts, contrato de componentes y animaciones.
+- [Instructions README](.github/instructions/README.md): Índice de los deep refs.
+
+## Source
+
+- [Slides](src/slides.md): La presentación (Markdown + componentes auto-importados).
+- [UnoCSS / tokens de marca](src/uno.config.ts): Paleta corporativa, shortcuts y safelist.
+- [Brand accents](src/components/brand-accents.ts): Helper `resolveAccent()` y tipo `BrandAccent`.
+- [Componentes](src/components/): `StatCard`, `ProgressRing`, `PhaseTimeline`, `KanbanBoard`, `TechStack`, `BrandLogo`.
+- [Layouts](src/layouts/): Layouts custom `cover`, `section`, `statement`, `end`.
+- [Estilos](src/styles/): `fonts.css`, `layout.css`, `animations.css`.
+
+## Configuración
+
+- [package.json](package.json): Dependencias, scripts (dev/build/export/typecheck/lint/format) y engines.
+- [tsconfig.json](tsconfig.json): Configuración de TypeScript.
+- [eslint.config.js](eslint.config.js): Reglas de lint.
+
+## Optional
+
+- [.ai/skills/](.ai/skills/): Skills SDD y de buenas prácticas (Slidev).
+- [.ai/prompts/](.ai/prompts/): Playbooks de tarea.
+- [.ai/agents/](.ai/agents/): Roles de agente (`blueprint`, `debug`, `mentor`, `slidev`).
+- [.ai/templates/](.ai/templates/): Plantillas de brief / outline / tareas.

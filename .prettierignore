@@ -1,0 +1,11 @@
+.reports
+.slidev
+dist
+node_modules
+src/public
+pnpm-lock.yaml
+package-lock.json
+
+# Slidev decks: the `---` slide separators + per-slide frontmatter are NOT
+# standard Markdown — Prettier rewrites them into headings and breaks the deck.
+src/slides.md

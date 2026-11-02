@@ -1,0 +1,376 @@
+/* ==========================================================================
+   INACAP corporate design tokens + base typography for Slidev
+   ========================================================================== */
+
+:root {
+	/* Official INACAP corporate palette */
+	--inacap-red: #e11927;
+	--inacap-red-alt: #fca5a5;
+	--inacap-red-dark: #991b1b;
+	--inacap-navy: #0a2540;
+	--inacap-navy-alt: #93c5fd;
+	--inacap-navy-dark: #030d18;
+	--inacap-crimson: #991b1b;
+	--inacap-crimson-alt: #fecaca;
+	--inacap-crimson-dark: #450a0a;
+
+	/* Lead red is the primary corporate identity colour */
+	--inacap-primary: #e11927;
+
+	/* Clean corporate surfaces + neutral text tones */
+	--inacap-cream: #f8fafc;
+	--inacap-cream-alt: #f1f5f9;
+	--inacap-ink: #1e293b;
+	--inacap-ink-soft: #64748b;
+
+	/* Backward compatibility aliases */
+	--inacap-pink: var(--inacap-red);
+	--inacap-pink-alt: var(--inacap-red-alt);
+	--inacap-pink-dark: var(--inacap-red-dark);
+	--inacap-rose: var(--inacap-crimson);
+	--inacap-rose-alt: var(--inacap-crimson-alt);
+	--inacap-rose-dark: var(--inacap-crimson-dark);
+	--inacap-fuchsia: var(--inacap-navy);
+	--inacap-fuchsia-alt: var(--inacap-navy-alt);
+	--inacap-fuchsia-dark: var(--inacap-navy-dark);
+
+	/* Semantic accent — the deck-wide brand accent. Defaults to official red;
+	   overridden per brand by an `accent-<brand>` class on <html> (see useDeckBrand).
+	   --accent-label is the on-surface label tone (deep in light, bright in dark). */
+	--accent-solid: var(--inacap-red);
+	--accent-soft: var(--inacap-red-alt);
+	--accent-dark: var(--inacap-red-dark);
+	--accent-label: var(--accent-dark);
+
+	/* Slidev theme variables */
+	--slidev-theme-primary: var(--accent-solid);
+	--slidev-code-font-family: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* Deck brand overrides — set by `themeConfig.brand` (red is the :root default). */
+html.accent-red {
+	--accent-solid: var(--inacap-red);
+	--accent-soft: var(--inacap-red-alt);
+	--accent-dark: var(--inacap-red-dark);
+}
+
+html.accent-navy {
+	--accent-solid: var(--inacap-navy);
+	--accent-soft: var(--inacap-navy-alt);
+	--accent-dark: var(--inacap-navy-dark);
+}
+
+html.accent-crimson {
+	--accent-solid: var(--inacap-crimson);
+	--accent-soft: var(--inacap-crimson-alt);
+	--accent-dark: var(--inacap-crimson-dark);
+}
+
+html.accent-pink {
+	--accent-solid: var(--inacap-red);
+	--accent-soft: var(--inacap-red-alt);
+	--accent-dark: var(--inacap-red-dark);
+}
+
+html.accent-rose {
+	--accent-solid: var(--inacap-crimson);
+	--accent-soft: var(--inacap-crimson-alt);
+	--accent-dark: var(--inacap-crimson-dark);
+}
+
+html.accent-fuchsia {
+	--accent-solid: var(--inacap-navy);
+	--accent-soft: var(--inacap-navy-alt);
+	--accent-dark: var(--inacap-navy-dark);
+}
+
+/* On dark surfaces, labels use the bright variant so they stay legible. */
+.dark {
+	--accent-label: var(--accent-soft);
+}
+
+/* Display-word gradient — a vibrant, corporate red gradient
+   flowing red → crimson → coral → red seamlessly. */
+.brand-gradient {
+	background-image: linear-gradient(
+		90deg,
+		var(--inacap-red),
+		var(--inacap-red-alt),
+		var(--inacap-crimson),
+		var(--inacap-red),
+		var(--inacap-crimson),
+		var(--inacap-red-alt),
+		var(--inacap-red)
+	);
+}
+
+html {
+	font-family: 'INACAP Nueva Sans', ui-sans-serif, system-ui, sans-serif;
+	letter-spacing: 0.012em;
+}
+
+.slidev-layout {
+	font-family: 'INACAP Nueva Sans', ui-sans-serif, system-ui, sans-serif;
+	/* themed surface — overridden per style in themes.css; mesh layouts
+	   (cover/section/end) paint their own background on top */
+	background-color: var(--surface-base);
+	color: var(--inacap-ink);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.dark .slidev-layout {
+	color: #e8eaec;
+}
+
+/* headings: large display titles lead in corporate red, mirroring the deck */
+.slidev-layout h1,
+.slidev-layout h2,
+.slidev-layout h3 {
+	font-weight: 700;
+	letter-spacing: -0.02em;
+}
+
+.slidev-layout h1,
+.slidev-layout h2 {
+	/* deep brand accent: high contrast on light surfaces */
+	color: var(--accent-dark);
+}
+
+/* sub-headings (card titles) lead in dark ink for strong contrast on light surfaces */
+.slidev-layout h3 {
+	color: var(--inacap-ink);
+	letter-spacing: -0.01em;
+}
+
+.dark .slidev-layout h1,
+.dark .slidev-layout h2,
+.dark .slidev-layout h3 {
+	color: #fff;
+}
+
+/* ==========================================================================
+   Dark-surface content contrast (Dark / AMOLED styles).
+   ========================================================================== */
+
+/* neutral / body text → light */
+.dark .slidev-layout .text-ink,
+.dark .slidev-layout .text-gray-700 {
+	color: #e8eaec;
+}
+
+.dark .slidev-layout .text-ink\/80 {
+	color: rgb(232 234 236 / 80%);
+}
+
+.dark .slidev-layout .text-ink\/70 {
+	color: rgb(232 234 236 / 70%);
+}
+
+.dark .slidev-layout .text-ink\/65 {
+	color: rgb(232 234 236 / 65%);
+}
+
+.dark .slidev-layout .text-gray-600 {
+	color: #cdd0d6;
+}
+
+.dark .slidev-layout .text-gray-500,
+.dark .slidev-layout .text-gray-400,
+.dark .slidev-layout .text-ink-soft {
+	color: #9aa0a8;
+}
+
+/* brand-dark accents (labels, chips, emphasis) → bright on-brand variants */
+.dark .slidev-layout .text-brand-red-dark,
+.dark .slidev-layout .text-brand-pink-dark {
+	color: var(--inacap-red-alt);
+}
+
+.dark .slidev-layout .text-brand-crimson-dark,
+.dark .slidev-layout .text-brand-rose-dark {
+	color: var(--inacap-crimson-alt);
+}
+
+.dark .slidev-layout .text-brand-navy-dark,
+.dark .slidev-layout .text-brand-fuchsia-dark {
+	color: var(--inacap-navy-alt);
+}
+
+/* light neutral surfaces / borders → subtle translucent white */
+.dark .slidev-layout .bg-gray-100,
+.dark .slidev-layout .bg-gray-50,
+.dark .slidev-layout .bg-ink\/5 {
+	background-color: rgb(255 255 255 / 8%);
+}
+
+.dark .slidev-layout .border-gray-200,
+.dark .slidev-layout .border-ink\/20 {
+	border-color: rgb(255 255 255 / 14%);
+}
+
+.slidev-layout h1 {
+	font-size: 2.6rem;
+	line-height: 1.05;
+}
+
+.slidev-layout a {
+	color: var(--accent-solid);
+	text-decoration: none;
+	border-bottom: 1px solid
+		color-mix(in srgb, var(--accent-solid) 40%, transparent);
+	transition: border-color 0.2s ease;
+}
+
+.slidev-layout a:hover {
+	border-color: var(--accent-solid);
+}
+
+/* refined code blocks */
+.slidev-layout pre {
+	border-radius: 0.75rem;
+	box-shadow: 0 8px 30px rgb(0 0 0 / 12%);
+}
+
+/* corporate bullet markers */
+.slidev-layout ul > li::marker {
+	color: var(--accent-solid);
+}
+
+/* on-brand data tables */
+.slidev-layout table {
+	width: 100%;
+	border-collapse: collapse;
+	border-radius: 0.75rem;
+	overflow: hidden;
+	font-size: 0.875rem;
+	box-shadow: 0 8px 30px rgb(0 0 0 / 8%);
+}
+
+.slidev-layout th,
+.slidev-layout td {
+	padding: 0.4rem 0.75rem;
+	text-align: left;
+	line-height: 1.3;
+	border-bottom: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+}
+
+.slidev-layout thead th {
+	background: color-mix(in srgb, var(--accent-solid) 12%, transparent);
+	color: var(--accent-label);
+	font-weight: 700;
+}
+
+.slidev-layout tbody tr:last-child td {
+	border-bottom: none;
+}
+
+/* selection */
+::selection {
+	background: color-mix(in srgb, var(--accent-solid) 30%, transparent);
+}
+
+/*
+ * Workaround for slidevjs/slidev#2534.
+ */
+#slidev-goto-dialog.\-top-20 {
+	max-height: 80px;
+	overflow: hidden;
+}
+
+/* ==========================================================================
+   Smooth motion — gentler slide transitions and click reveals.
+   ========================================================================== */
+
+:root {
+	--slidev-transition-duration: 0.6s;
+}
+
+/* slide / fade page transitions */
+.slide-left-enter-active,
+.slide-left-leave-active,
+.slide-right-enter-active,
+.slide-right-leave-active,
+.slide-up-enter-active,
+.slide-up-leave-active,
+.slide-down-enter-active,
+.slide-down-leave-active {
+	transition: all var(--slidev-transition-duration)
+		cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+	transition: opacity var(--slidev-transition-duration)
+		cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* click reveals */
+.slidev-vclick-target {
+	transition:
+		opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+		transform 0.55s cubic-bezier(0.34, 1.42, 0.5, 1) !important;
+}
+
+.slidev-vclick-hidden:not(tr) {
+	transform: translateY(12px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.slidev-vclick-target {
+		transition: opacity 0.2s ease !important;
+	}
+
+	.slidev-vclick-hidden:not(tr) {
+		transform: none;
+	}
+}
+
+/* ==========================================================================
+   Mermaid diagram corporate INACAP theming
+   ========================================================================== */
+.mermaid {
+	font-family:
+		'INACAP Nueva Sans', ui-sans-serif, system-ui, sans-serif !important;
+}
+
+.mermaid .node rect,
+.mermaid .node circle,
+.mermaid .node polygon {
+	rx: 8px !important;
+	ry: 8px !important;
+	filter: drop-shadow(0 2px 5px rgb(0 0 0 / 5%));
+}
+
+.mermaid .edgePath .path {
+	stroke: var(--inacap-navy) !important;
+	stroke-width: 1.8px !important;
+}
+
+.mermaid .edgeLabel {
+	background-color: #ffffff !important;
+	padding: 2px 6px !important;
+	border-radius: 4px !important;
+	font-size: 11px !important;
+	color: var(--inacap-ink) !important;
+	border: 1px solid #e2e8f0 !important;
+}
+
+.mermaid .cluster rect {
+	rx: 10px !important;
+	ry: 10px !important;
+	fill: #f8fafc !important;
+	stroke: #cbd5e1 !important;
+	stroke-width: 1.5px !important;
+}
+
+.dark .mermaid .cluster rect {
+	fill: #1e293b !important;
+	stroke: #334155 !important;
+}
+
+.dark .mermaid .edgeLabel {
+	background-color: #0f172a !important;
+	color: #e2e8f0 !important;
+	border: 1px solid #334155 !important;
+}

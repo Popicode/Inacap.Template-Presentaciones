@@ -1,0 +1,201 @@
+/* ==========================================================================
+   Reusable CSS animations — apply with utility classes from markdown or Vue.
+   Example:  <div class="anim-fade-up" style="animation-delay: 120ms">…</div>
+   ========================================================================== */
+
+@keyframes inacap-fade-up {
+	from {
+		opacity: 0;
+		transform: translateY(24px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes inacap-fade-in {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes inacap-scale-in {
+	from {
+		opacity: 0;
+		transform: scale(0.92);
+	}
+
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes inacap-float {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(-10px);
+	}
+}
+
+@keyframes inacap-pulse-ring {
+	0% {
+		box-shadow: 0 0 0 0
+			color-mix(in srgb, var(--accent-solid) 55%, transparent);
+	}
+
+	70% {
+		box-shadow: 0 0 0 18px transparent;
+	}
+
+	100% {
+		box-shadow: 0 0 0 0 transparent;
+	}
+}
+
+@keyframes inacap-gradient-pan {
+	0% {
+		background-position: 0% 50%;
+	}
+
+	50% {
+		background-position: 100% 50%;
+	}
+
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@keyframes inacap-grow-x {
+	from {
+		transform: scaleX(0);
+	}
+
+	to {
+		transform: scaleX(1);
+	}
+}
+
+.anim-fade-up {
+	animation: inacap-fade-up 0.75s cubic-bezier(0.34, 1.42, 0.5, 1) both;
+}
+
+.anim-fade-in {
+	animation: inacap-fade-in 0.8s ease both;
+}
+
+.anim-scale-in {
+	animation: inacap-scale-in 0.65s cubic-bezier(0.34, 1.45, 0.5, 1) both;
+}
+
+.anim-float {
+	animation: inacap-float 6s ease-in-out infinite;
+}
+
+.anim-pulse-ring {
+	animation: inacap-pulse-ring 2.4s ease-out infinite;
+}
+
+/* calm tech-based mesh with subtle INACAP brand glows (follows the deck brand) */
+.bg-inacap-mesh {
+	background:
+		radial-gradient(
+			60% 80% at 15% 15%,
+			color-mix(in srgb, var(--accent-solid) 9%, transparent),
+			transparent 60%
+		),
+		radial-gradient(
+			55% 75% at 85% 10%,
+			color-mix(in srgb, var(--accent-soft) 8%, transparent),
+			transparent 60%
+		),
+		linear-gradient(
+			135deg,
+			var(--surface-base) 0%,
+			var(--surface-base-alt) 100%
+		);
+	background-size: 160% 160%;
+	animation: inacap-gradient-pan 18s ease infinite;
+}
+
+.dark .bg-inacap-mesh {
+	background:
+		radial-gradient(
+			60% 80% at 15% 15%,
+			color-mix(in srgb, var(--accent-solid) 18%, transparent),
+			transparent 60%
+		),
+		radial-gradient(
+			55% 75% at 85% 10%,
+			color-mix(in srgb, var(--accent-soft) 14%, transparent),
+			transparent 60%
+		),
+		radial-gradient(
+			70% 80% at 70% 90%,
+			color-mix(in srgb, var(--accent-dark) 24%, transparent),
+			transparent 60%
+		),
+		linear-gradient(
+			135deg,
+			var(--surface-base) 0%,
+			var(--surface-base-alt) 100%
+		);
+	background-size: 160% 160%;
+	animation: inacap-gradient-pan 18s ease infinite;
+}
+
+/* flowing brand gradient for display words — additive and opt-in. Reuses the
+   inacap-gradient-pan keyframe (the same pan that animates bg-inacap-mesh). Pair it
+   with the `brand-gradient` shortcut:
+       <span class="brand-gradient brand-gradient-flow">Claude</span> */
+.brand-gradient-flow {
+	background-size: 260% auto;
+	animation: inacap-gradient-pan 7s ease-in-out infinite;
+}
+
+/* soft animated brand-gradient fill — marks a row/card as new or featured. */
+.bg-brand-gradient-soft {
+	background-image: linear-gradient(
+		90deg,
+		color-mix(in srgb, var(--inacap-red) 16%, transparent),
+		color-mix(in srgb, var(--inacap-crimson) 16%, transparent),
+		color-mix(in srgb, var(--inacap-navy) 16%, transparent),
+		color-mix(in srgb, var(--inacap-crimson) 16%, transparent),
+		color-mix(in srgb, var(--inacap-red) 16%, transparent)
+	);
+	background-size: 260% auto;
+	animation: inacap-gradient-pan 7s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.anim-fade-up,
+	.anim-fade-in,
+	.anim-scale-in,
+	.anim-float,
+	.anim-pulse-ring,
+	.bg-inacap-mesh,
+	.brand-gradient-flow,
+	.bg-brand-gradient-soft {
+		animation: none;
+	}
+
+	/* keep the shadow cue on hover, but drop the lift transform/transition */
+	.card {
+		transition: none !important;
+	}
+
+	.card:hover {
+		transform: none !important;
+	}
+}

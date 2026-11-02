@@ -1,0 +1,26 @@
+{
+	"explorer.fileNesting.enabled": true,
+	"explorer.fileNesting.expand": false,
+	"explorer.fileNesting.patterns": {
+		// SECTION: deck entry — Slidev/Vite deck-level config nests under slides.md
+		"slides.md": "uno.config.*, vite.config.*, global-top.vue, global-bottom.vue, netlify.toml, vercel.json, .slidev",
+		// SECTION: package + lockfiles + package-manager config
+		"package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, pnpm-workspace.yaml, package.*.json, .npmrc, .nvmrc, .pnp.cjs",
+		// SECTION: typescript config + ambient declarations
+		"tsconfig.json": "tsconfig.*.json, *.d.ts",
+		// SECTION: lint + format + editor style
+		"eslint.config.js": ".prettierrc, .prettierrc.*, .prettierignore, .editorconfig, .eslintignore, .eslintrc*, .stylelintrc*, .stylelintignore",
+		// SECTION: vcs
+		".gitignore": ".gitattributes",
+		// SECTION: AI agent instructions (one source of truth + pointers)
+		"agents.md": "claude.md, gemini.md, llms.txt, .copilotignore, .cursorrules, .windsurfrules",
+		// SECTION: project docs
+		"readme*": "changelog.md, license*, code_of_conduct.md, contributing.md, architecture.md, security.md",
+		// SECTION: generic siblings (specs, modules, declarations…)
+		"*.vue": "${capture}.*",
+		"*.ts": "${capture}.*",
+		"*.cts": "${capture}.cts.*",
+		"*.mts": "${capture}.mts.*",
+		"*.json": "${capture}.*.json"
+	}
+}

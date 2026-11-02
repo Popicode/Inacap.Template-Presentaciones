@@ -1,0 +1,4 @@
+savePrefix: ''
+allowBuilds:
+    esbuild: true
+    playwright-chromium: false

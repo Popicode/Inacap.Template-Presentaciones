@@ -1,0 +1,86 @@
+/* ==========================================================================
+   Background styles (surfaces) — selectable deck-wide via a `theme-*` class on
+   <html>, applied by `useDeckTheme` (src/composables/use-deck-theme.ts).
+
+   Only the SURFACE is themed here: base background, technical dot-grid pattern
+   and ambient tech glows. Text / heading / card contrast is reused from the
+   existing `.dark` layer (layout.css + UnoCSS `dark:`).
+   ========================================================================== */
+
+:root {
+	/* Clean corporate tech surface (crisp slate-white, harmonized with INACAP red) */
+	--surface-base: #f8fafc;
+	--surface-base-alt: #edf2f7;
+}
+
+/* Light / Claro institucional (clean modern developer surface) */
+html.theme-beige {
+	--surface-base: #f8fafc;
+	--surface-base-alt: #edf2f7;
+}
+
+/* Dark — deep tech neutral slate */
+html.theme-dark {
+	--surface-base: #0b0f19;
+	--surface-base-alt: #111827;
+}
+
+/* AMOLED — true black for OLED screens */
+html.theme-amoled {
+	--surface-base: #000000;
+	--surface-base-alt: #050505;
+}
+
+/* Light theme: clean tech surface with subtle INACAP red / navy ambient glow
+   and a crisp engineering micro-dot grid */
+html.theme-beige .slidev-layout:not(.bg-inacap-mesh) {
+	background-color: var(--surface-base);
+	background-image:
+		radial-gradient(
+			50% 60% at 8% 5%,
+			color-mix(in srgb, var(--inacap-red) 3.5%, transparent),
+			transparent 60%
+		),
+		radial-gradient(
+			55% 65% at 92% 95%,
+			color-mix(in srgb, var(--inacap-navy) 3%, transparent),
+			transparent 60%
+		),
+		radial-gradient(circle, rgb(15 23 42 / 6.5%) 1px, transparent 1px);
+	background-size:
+		auto,
+		auto,
+		28px 28px;
+}
+
+/* Dark theme: deep slate with subtle red & navy ambient lighting + tech grid */
+html.theme-dark .slidev-layout:not(.bg-inacap-mesh) {
+	background-color: var(--surface-base);
+	background-image:
+		radial-gradient(
+			50% 60% at 8% 5%,
+			color-mix(in srgb, var(--inacap-red) 9%, transparent),
+			transparent 60%
+		),
+		radial-gradient(
+			55% 65% at 92% 95%,
+			color-mix(in srgb, var(--inacap-navy) 14%, transparent),
+			transparent 60%
+		),
+		radial-gradient(circle, rgb(255 255 255 / 6%) 1px, transparent 1px);
+	background-size:
+		auto,
+		auto,
+		28px 28px;
+}
+
+/* AMOLED: high-contrast pure black with subtle tech grid */
+html.theme-amoled .slidev-layout:not(.bg-inacap-mesh) {
+	background-color: #000000;
+	background-image: radial-gradient(
+		circle,
+		rgb(255 255 255 / 4%) 1px,
+		transparent 1px
+	);
+	background-size: 28px 28px;
+}
